@@ -1,17 +1,9 @@
 <script setup>
+import HomeHeader from '@/components/Home/HomeHeader.vue';
 </script>
 
 <template lang="pug">
-  
-    div Hello pug!
+    HomeHeader
   
 </template>
 
-<style lang="stylus" scoped>
-@import 'nib'
-h1
-  margin 0px
-  color red
-  background-color rgba(#333, 90%)
-
-</style>

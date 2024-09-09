@@ -7,6 +7,7 @@ import nib from 'nib'
 export default defineConfig({
   plugins: [
     vue(),
+    "@vue/language-plugin-pug"
   ],
   css: {
     preprocessorOptions: {
