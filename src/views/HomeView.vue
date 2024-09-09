@@ -1,9 +1,9 @@
 <script setup>
 </script>
 
-<template>
+<template lang="pug">
   
-    <h1>Home</h1>
+    div Hello pug!
   
 </template>
 
