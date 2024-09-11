@@ -43,7 +43,7 @@ const truncatedDescription = computed(() => {
     .new
         .title
             div Truyện mới cập nhật
-            div Xem thêm {{'>'}}
+            b Xem thêm {{'>'}}
         .category
             .category-item(@click="toggleCategory(0)" :class="{ active: newStoryCategory == 0 }") Convert
             .category-item(@click="toggleCategory(1)" :class="{ active: newStoryCategory == 1 }") Dịch
@@ -57,7 +57,7 @@ const truncatedDescription = computed(() => {
     .new
         .title
             div Truyện xem nhiều
-            div Xem thêm {{'>'}}
+            b Xem thêm {{'>'}}
         
         div.story-item
             div#item-small(v-for="item in truncatedDescription" :key="item.id")

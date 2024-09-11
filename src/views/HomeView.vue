@@ -1,6 +1,7 @@
 <script setup>
 import HomeHeader from '@/components/Home/HomeHeader.vue';
 import NewStory from '@/components/Home/NewStory.vue';
+import ListStory from '@/components/Home/ListStory.vue';
 import { ref, computed } from 'vue';
 
 const slides = [
@@ -69,8 +70,21 @@ function goToSlide(index) {
                 div Thể loại
 
     img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
+    //- New and popular
+    NewStory 
 
-    NewStory
+    //- De cu + hoan thanh
+    ListStory
+
+    .bottom-nav
+        RouterLink 
+            div iOS
+        RouterLink 
+            div Android
+        RouterLink 
+            div PC
+        RouterLink 
+            div Nội quy
 
 </template>
 
@@ -152,6 +166,16 @@ img
     object-fit cover
     display block
 
+.bottom-nav
+    display: flex
+    flex-direction: row
+    margin 10px 0px
+    height: 48px
+    justify-content: space-between
 
+.bottom-nav a
+    text-align: center
+    width 100%
+    padding 0px 12px
 
 </style>
