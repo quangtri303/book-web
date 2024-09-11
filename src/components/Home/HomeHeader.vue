@@ -34,11 +34,8 @@ header
   display flex
   justify-content space-between
   align-items center
-  height 68px
+  height 52px
 
-a
-  text-decoration: none
-  color white
 
 #title
   display flex
