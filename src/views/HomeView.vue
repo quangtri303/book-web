@@ -35,61 +35,66 @@ function goToSlide(index) {
 </script>
 
 <template lang="pug">
-    HomeHeader
-    .slider-wrapper
-        .slider
-            img(:src="slides[currentSlide].url")
-        .slider-nav
-            button(v-for="(slide, index) in slides" @click="goToSlide(index)" :class="{ active: currentSlide === index }" ) &nbsp;
-            
-    .search-bar
-        button(@click="toggleSearch")
-            i.pi.pi-search
-            div Tìm kiếm
+    div.main
+        HomeHeader
+        .slider-wrapper
+            .slider
+                img(:src="slides[currentSlide].url")
+            .slider-nav
+                button(v-for="(slide, index) in slides" @click="goToSlide(index)" :class="{ active: currentSlide === index }" ) &nbsp;
+                
+        .search-bar
+            button(@click="toggleSearch")
+                i.pi.pi-search
+                div Tìm kiếm
 
-    .nav
-        RouterLink(to="/")
-            .nav-item
-                div icon
-                div Thể loại
-        RouterLink(to="/")
-            .nav-item
-                div icon
-                div Thể loại
-        RouterLink(to="/")
-            .nav-item
-                div icon
-                div Thể loại
-        RouterLink(to="/")
-            .nav-item
-                div icon
-                div Thể loại
-        RouterLink(to="/")
-            .nav-item
-                div icon
-                div Thể loại
+        .nav
+            RouterLink(to="/")
+                .nav-item
+                    div icon
+                    div Thể loại
+            RouterLink(to="/")
+                .nav-item
+                    div icon
+                    div Thể loại
+            RouterLink(to="/")
+                .nav-item
+                    div icon
+                    div Thể loại
+            RouterLink(to="/")
+                .nav-item
+                    div icon
+                    div Thể loại
+            RouterLink(to="/")
+                .nav-item
+                    div icon
+                    div Thể loại
 
-    img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
-    //- New and popular
-    NewStory 
+        img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
+        //- New and popular
+        NewStory 
 
-    //- De cu + hoan thanh
-    ListStory
+        //- De cu + hoan thanh
+        ListStory
 
-    .bottom-nav
-        RouterLink 
-            div iOS
-        RouterLink 
-            div Android
-        RouterLink 
-            div PC
-        RouterLink 
-            div Nội quy
+        .bottom-nav
+            RouterLink 
+                div iOS
+            RouterLink 
+                div Android
+            RouterLink 
+                div PC
+            RouterLink 
+                div Nội quy
 
+        button.dl-btn Tải app TTV để sử dụng đầy đủ chức năng
 </template>
 
 <style lang="stylus" scoped>
 @import '../assets/main.styl'
+
+.main
+    position relative
 
 img
     width 100%
@@ -160,7 +165,7 @@ img
         color #23527c
 
 .ads
-    width 100%
+    width 90%
     margin 0 auto
     padding 10px
     object-fit cover
@@ -177,5 +182,16 @@ img
     text-align: center
     width 100%
     padding 0px 12px
+
+.dl-btn
+    position sticky
+    bottom 10px
+    background-color teal
+    color white
+    width 90%
+    height: 48px
+    margin 0 20px
+    border-radius: 30px
+    font-size 14px
 
 </style>

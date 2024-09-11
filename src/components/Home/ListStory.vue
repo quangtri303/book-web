@@ -80,7 +80,7 @@ const story = [
 @import '../../assets/main.styl'
 
 .ads
-    width 100%
+    width 90%
     margin 0 auto
     padding 10px
     object-fit cover

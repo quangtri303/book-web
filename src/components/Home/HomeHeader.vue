@@ -35,6 +35,7 @@ header
   justify-content space-between
   align-items center
   height 52px
+  width 100%
 
 
 #title
