@@ -1,6 +1,7 @@
 <script setup>
 import HomeHeader from '@/components/Home/HomeHeader.vue';
-import { ref } from 'vue';
+import NewStory from '@/components/Home/NewStory.vue';
+import { ref, computed } from 'vue';
 
 const slides = [
     {
@@ -18,14 +19,17 @@ const slides = [
 
 ];
 
-const currentSlide = ref(2);
+function toggleSearch() {
+    console.log('toggle search');
+}
+
+const currentSlide = ref(0);
 function goToSlide(index) {
     currentSlide.value = index;
 }
 
-function toggleSearch() {
-    console.log('toggle search');
-}
+
+
 
 </script>
 
@@ -41,6 +45,33 @@ function toggleSearch() {
         button(@click="toggleSearch")
             i.pi.pi-search
             div Tìm kiếm
+
+    .nav
+        RouterLink(to="/")
+            .nav-item
+                div icon
+                div Thể loại
+        RouterLink(to="/")
+            .nav-item
+                div icon
+                div Thể loại
+        RouterLink(to="/")
+            .nav-item
+                div icon
+                div Thể loại
+        RouterLink(to="/")
+            .nav-item
+                div icon
+                div Thể loại
+        RouterLink(to="/")
+            .nav-item
+                div icon
+                div Thể loại
+
+    img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
+
+    NewStory
+
 </template>
 
 <style lang="stylus" scoped>
@@ -97,5 +128,30 @@ img
     padding 5px 12px
     &:hover
         color teal
+
+.nav
+    display flex
+    flex-direction: row
+    justify-content: space-between
+    padding 0px 10px
+    
+.nav-item
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding 15px 0px
+    gap 10px
+    color black
+    &:hover
+        color #23527c
+
+.ads
+    width 100%
+    margin 0 auto
+    padding 10px
+    object-fit cover
+    display block
+
+
 
 </style>
