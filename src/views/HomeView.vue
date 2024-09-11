@@ -51,24 +51,24 @@ function goToSlide(index) {
         .nav
             RouterLink(to="/")
                 .nav-item
-                    div icon
+                    img(src="../assets/images/category.png")
                     div Thể loại
             RouterLink(to="/")
                 .nav-item
-                    div icon
-                    div Thể loại
+                    img(src="../assets/images/rank.png")
+                    div Xếp hạng
             RouterLink(to="/")
                 .nav-item
-                    div icon
-                    div Thể loại
+                    img(src="../assets/images/filter.png")
+                    div Bộ lọc
             RouterLink(to="/")
                 .nav-item
-                    div icon
-                    div Thể loại
+                    img(src="../assets/images/top.png")
+                    div Top User
             RouterLink(to="/")
                 .nav-item
-                    div icon
-                    div Thể loại
+                    img(src="../assets/images/review.png")
+                    div Review
 
         img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
         //- New and popular
@@ -87,7 +87,9 @@ function goToSlide(index) {
             RouterLink 
                 div Nội quy
 
-        button.dl-btn Tải app TTV để sử dụng đầy đủ chức năng
+        button.dl-btn 
+            img(src="../assets/images/ttvappicon.png")
+            div Tải app TTV để sử dụng đầy đủ chức năng
 </template>
 
 <style lang="stylus" scoped>
@@ -164,6 +166,10 @@ img
     &:hover
         color #23527c
 
+.nav-item img
+    width 30px
+    height 30px
+
 .ads
     width 90%
     margin 0 auto
@@ -185,6 +191,11 @@ img
 
 .dl-btn
     position sticky
+    display flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    gap 10px
     bottom 10px
     background-color teal
     color white
@@ -194,4 +205,7 @@ img
     border-radius: 30px
     font-size 14px
 
+.dl-btn img
+    width 30px
+    height 30px
 </style>

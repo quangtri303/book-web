@@ -18,8 +18,7 @@ function toggleDropdown() {
           button#forum-btn Diễn đàn
       div#right
         button#download 
-          i.pi-arrow-down.pi
-          div App
+          img(src="../../assets/images/download.png")
         button#login
           RouterLink(to="/login") 
             i.pi-user.pi-user.pi/
@@ -73,18 +72,9 @@ header
   gap 10px
   padding-right 10px
 
-#download
-  display: flex
-  flex-direction: row
-  gap 8px
-  padding 8px 10px
-  background-color teal
-  border 0px
-  font-size 13px
-  font-weight 100
-  line-height: 15px
-  text-align: center
-  color white
+#download img
+  width 55px
+  height 28px
 
 #login
   padding: 5px
