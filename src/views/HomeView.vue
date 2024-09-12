@@ -1,8 +1,8 @@
 <script setup>
+import { ref, computed } from 'vue';
 import HomeHeader from '@/components/Home/HomeHeader.vue';
 import NewStory from '@/components/Home/NewStory.vue';
 import ListStory from '@/components/Home/ListStory.vue';
-import { ref, computed } from 'vue';
 
 const slides = [
     {
@@ -35,13 +35,13 @@ function goToSlide(index) {
 </script>
 
 <template lang="pug">
-    div.main
+    div.main.mobile
         HomeHeader
         .slider-wrapper
             .slider
-                img(:src="slides[currentSlide].url")
+                img(:src="slides[currentSlide].url" alt="Slide image")
             .slider-nav
-                button(v-for="(slide, index) in slides" @click="goToSlide(index)" :class="{ active: currentSlide === index }" ) &nbsp;
+                button(v-for="(slide, index) in slides" :key="slide.id" @click="goToSlide(index)" :class="{ active: currentSlide === index }" ) &nbsp;
                 
         .search-bar
             button(@click="toggleSearch")
@@ -51,26 +51,26 @@ function goToSlide(index) {
         .nav
             RouterLink(to="/")
                 .nav-item
-                    img(src="../assets/images/category.png")
+                    img(src="../assets/images/category.png" alt="Category")
                     div Thể loại
             RouterLink(to="/")
                 .nav-item
-                    img(src="../assets/images/rank.png")
+                    img(src="../assets/images/rank.png" alt="Rank")
                     div Xếp hạng
             RouterLink(to="/")
                 .nav-item
-                    img(src="../assets/images/filter.png")
+                    img(src="../assets/images/filter.png" alt="Filter")
                     div Bộ lọc
             RouterLink(to="/")
                 .nav-item
-                    img(src="../assets/images/top.png")
+                    img(src="../assets/images/top.png" alt="Top User")
                     div Top User
             RouterLink(to="/")
                 .nav-item
-                    img(src="../assets/images/review.png")
+                    img(src="../assets/images/review.png" alt="Review")
                     div Review
 
-        img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
+        img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg" alt="Banner app")
         //- New and popular
         NewStory 
 
@@ -88,12 +88,18 @@ function goToSlide(index) {
                 div Nội quy
 
         button.dl-btn 
-            img(src="../assets/images/ttvappicon.png")
+            img(src="../assets/images/ttvappicon.png" alt="TTV app icon")
             div Tải app TTV để sử dụng đầy đủ chức năng
 </template>
 
 <style lang="stylus" scoped>
 @import '../assets/main.styl'
+
+.desktop
+  display none
+
+.mobile
+  display block
 
 .main
     position relative
@@ -208,4 +214,12 @@ img
 .dl-btn img
     width 30px
     height 30px
+
+
+@media (min-width: 992px)
+  .desktop
+    display block
+
+  .mobile
+    display none
 </style>
