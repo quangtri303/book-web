@@ -5,27 +5,38 @@ const booklist = [
     {
         id:1,
         name: "Quỷ Tam Quốc",
-        chapter: 1
+        chapter: 1123,
+        desc: "Tu giới Cửu Châu, Đạo Đình nhất thống, thế gia áp bách, tông môn lũng..."
     },
     {
         id:2,
         name: "Quỷ Tam Quốc",
-        chapter: 1
+        chapter: 1321,
+        desc: "Tu giới Cửu Châu, Đạo Đình nhất thống, thế gia áp bách, tông môn lũng..."
     },
     {
         id:3,
         name: "Quỷ Tam Quốc",
-        chapter: 1
+        chapter: 1123,
+        desc: "Tu giới Cửu Châu, Đạo Đình nhất thống, thế gia áp bách, tông môn lũng..."
     },
     {
         id:4,
         name: "Quỷ Tam Quốc",
-        chapter: 1
+        chapter: 112,
+        desc: "Tu giới Cửu Châu, Đạo Đình nhất thống, thế gia áp bách, tông môn lũng..."
     },
     {
         id:5,
         name: "Quỷ Tam Quốc",
-        chapter: 1
+        chapter: 142,
+        desc: "Tu giới Cửu Châu, Đạo Đình nhất thống, thế gia áp bách, tông môn lũng..."
+    },
+    {
+        id:6,
+        name: "Quỷ Tam Quốc",
+        chapter: 142,
+        desc: "Tu giới Cửu Châu, Đạo Đình nhất thống, thế gia áp bách, tông môn lũng..."
     },
 ]
 </script>
@@ -43,6 +54,10 @@ const booklist = [
         .title Biên tập viên đề cử
         .carousel
         .book-grid
+            .book-item(v-for="item in booklist" :key="item.id")
+                RouterLink(to="/").title {{ item.name }}
+                p.chap <b>{{ item.chapter }}</b> <i>chương</i>
+                p.desc <i>{{ item.desc }}</i>
 
     .following
         p.title Đang theo dõi
@@ -59,8 +74,9 @@ const booklist = [
     width 100%
     display flex
     flex-direction row
+    gap 30px
     justify-content center
-    padding 0px 30px
+    padding 0px 20px
     margin 20px 0px
 
 .just-watched, .following
@@ -92,4 +108,23 @@ const booklist = [
     display flex
     flex-direction column
     width 48%
+    .carousel
+        width 100%
+        height 150px
+        background black
+    .book-grid
+        display grid
+        grid-template-columns 1fr 1fr 1fr
+        .book-item
+            padding 15px 0px
+            a
+                hover-text(black,red)
+            .chap
+                color red
+                font-size 12px
+                b
+                    font-size 16px
+            .desc
+                color #666
+
 </style>

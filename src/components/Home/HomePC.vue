@@ -2,6 +2,7 @@
 import NavbarPC from '@/components/Home/NavbarPC.vue'
 import BannerPC from '@/components/Home/BannerPC.vue'
 import BooklistPC from '@/components/Home/BooklistPC.vue'
+import BookRankPC from '@/components/Home/BookRankPC.vue'
 </script>
 
 <template lang="pug">
@@ -20,6 +21,8 @@ import BooklistPC from '@/components/Home/BooklistPC.vue'
     NavbarPC
     BannerPC
     BooklistPC
+    img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
+    BookRankPC
 </template>
 
 <style lang="stylus" scoped>
@@ -74,4 +77,9 @@ import BooklistPC from '@/components/Home/BooklistPC.vue'
     i
         margin-right: 5px
 
+.ads
+    width 90%
+    margin 0 auto
+    object-fit cover
+    display block
 </style>
