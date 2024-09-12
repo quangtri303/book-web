@@ -3,6 +3,7 @@ import { ref, computed } from 'vue';
 import HomeHeader from '@/components/Home/HomeHeader.vue';
 import NewStory from '@/components/Home/NewStory.vue';
 import ListStory from '@/components/Home/ListStory.vue';
+import HomePC from '@/components/Home/HomePC.vue';
 
 const slides = [
     {
@@ -35,6 +36,9 @@ function goToSlide(index) {
 </script>
 
 <template lang="pug">
+    .desktop
+        HomePC
+
     div.main.mobile
         HomeHeader
         .slider-wrapper
@@ -216,7 +220,7 @@ img
     height 30px
 
 
-@media (min-width: 992px)
+@media (min-width: 1100px)
   .desktop
     display block
 
