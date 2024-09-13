@@ -4,6 +4,7 @@ import BannerPC from '@/components/Home/BannerPC.vue'
 import BooklistPC from '@/components/Home/BooklistPC.vue'
 import BookRankPC from '@/components/Home/BookRankPC.vue'
 import BookGridPC from '@/components/Home/BookGridPC.vue'
+import TopUserPC from '@/components/Home/TopUserPC.vue'
 </script>
 
 <template lang="pug">
@@ -25,6 +26,7 @@ import BookGridPC from '@/components/Home/BookGridPC.vue'
     img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
     BookRankPC
     BookGridPC(title="Truyện mới" )
+    TopUserPC
     img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
     BookGridPC(title="Truyện đã hoàn thành" )
 </template>
