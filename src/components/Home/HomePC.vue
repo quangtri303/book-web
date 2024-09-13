@@ -29,6 +29,12 @@ import TopUserPC from '@/components/Home/TopUserPC.vue'
     TopUserPC
     img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
     BookGridPC(title="Truyện đã hoàn thành" )
+    .footer.flex.flex-row.justify-center
+        img(src="https://truyen.tangthuvien.vn/images/logo-web-gray.png" alt="Logo")
+        .desc.flex.flex-col
+            p © 2007 Tàng Thư Viện - Chính sách
+            p Tàng Thư Viện là sân chơi mở và free cho cộng đồng fan kiếm hiệp, tiên hiệp, ngôn tình. Chúc các bạn có những giây phút thư giãn thoải mái sau giờ làm việc và học tập căng thẳng.
+
 </template>
 
 <style lang="stylus" scoped>
@@ -88,4 +94,13 @@ import TopUserPC from '@/components/Home/TopUserPC.vue'
     margin 0 auto
     object-fit cover
     display block
+
+.footer
+    background #f8f8f8
+    padding 20px 150px
+    gap 20px
+    img
+        height 60px
+    .desc
+        color #4e4e4e
 </style>
