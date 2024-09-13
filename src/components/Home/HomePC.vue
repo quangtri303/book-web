@@ -3,6 +3,7 @@ import NavbarPC from '@/components/Home/NavbarPC.vue'
 import BannerPC from '@/components/Home/BannerPC.vue'
 import BooklistPC from '@/components/Home/BooklistPC.vue'
 import BookRankPC from '@/components/Home/BookRankPC.vue'
+import BookGridPC from '@/components/Home/BookGridPC.vue'
 </script>
 
 <template lang="pug">
@@ -23,6 +24,9 @@ import BookRankPC from '@/components/Home/BookRankPC.vue'
     BooklistPC
     img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
     BookRankPC
+    BookGridPC(title="Truyện mới" )
+    img.ads(src="https://truyen.tangthuvien.vn/images/banner-app-ttv.jpg")
+    BookGridPC(title="Truyện đã hoàn thành" )
 </template>
 
 <style lang="stylus" scoped>
