@@ -95,7 +95,7 @@ const imgSlide = [
     {
         id: 2,
         url: "https://truyen.tangthuvien.vn/images/slide9.jpg",
-        name: "Vạn Cổ Tối Cường Tông"
+        name: "Vạn Cổ Tối Cường"
     },
     {
         id: 3,
@@ -192,7 +192,7 @@ const imgSlide = [
     flex-direction: column
 
 .box
-    width 700px
+    width 60%
     margin 0px 10px
     .swiper
         height 300px
@@ -259,7 +259,7 @@ const imgSlide = [
 
 
 .news
-    flex 1 1 20%
+    flex 1 1 15%
     display flex
     flex-direction: column
     gap 15px

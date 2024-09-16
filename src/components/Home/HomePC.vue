@@ -18,7 +18,7 @@ import TopUserPC from '@/components/Home/TopUserPC.vue'
                 i.pi.pi-search
         div.account
             button.account-btn
-                i.pi.pi-user
+                i.pi.pi-address-book
                 div Tài khoản
     NavbarPC
     BannerPC
