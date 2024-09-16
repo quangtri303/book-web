@@ -4,7 +4,12 @@ import HomeHeader from '@/components/Home/HomeHeader.vue';
 import NewStory from '@/components/Home/NewStory.vue';
 import ListStory from '@/components/Home/ListStory.vue';
 import HomePC from '@/components/Home/HomePC.vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
 
+const modules = [Pagination, Autoplay];
 const slides = [
     {
         id: "slide-1",
@@ -42,10 +47,19 @@ function goToSlide(index) {
     div.main.mobile
         HomeHeader
         .slider-wrapper
-            .slider
-                img(:src="slides[currentSlide].url" alt="Slide image")
-            .slider-nav
-                button(v-for="(slide, index) in slides" :key="slide.id" @click="goToSlide(index)" :class="{ active: currentSlide === index }" ) &nbsp;
+            swiper(
+                :modules="modules",
+                :autoplay="{ delay: 5000 }",
+                :onSlideChange="onSlideChange",
+                :onSwiper="onSwiper",
+                :slidesPerView="1",
+                :spaceBetween="10",
+                :pagination="{ clickable: true }"
+                v-model:swiper="swiper"
+                class="mySwiper swiper"
+            )
+                SwiperSlide(v-for="(slide, index) in slides" :key="slide.id")
+                    img(:src="slide.url" alt="Slide")
                 
         .search-bar
             button(@click="toggleSearch")
@@ -219,6 +233,9 @@ img
     width 30px
     height 30px
 
+.mySwiper
+    --swiper-pagination-color red
+    --swiper-pagination-bullet-inactive-color #666
 
 @media (min-width: 1100px)
   .desktop
