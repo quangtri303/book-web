@@ -6,9 +6,9 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 
-const modules = [EffectCoverflow, Pagination];
+const modules = [EffectCoverflow, Pagination, Autoplay];
 
 const imgSlide = [
     {
@@ -100,7 +100,7 @@ const onSlideChange = (swiper) => {
     .featured
         .title Biên tập viên đề cử
         .showcase.flex.flex-row
-            swiper(:effect="'coverflow'" :grabCursor="true" :slideToClickedSlide="true" loop :centeredSlides="true" :slidesPerView="'3'" :coverflowEffect="{rotate: 0,stretch: 40, depth: 150, modifier: 1, slideShadows: 0 }" :pagination="{ clickable: true, el: '.swiper-pagination' }"  :modules="modules" @slideChange="onSlideChange" class="mySwiper swiper")
+            swiper(:effect="'coverflow'" :autoplay="{delay: 5000, disableOnInteraction: false,}" :grabCursor="true" :slideToClickedSlide="true" loop :centeredSlides="true" :slidesPerView="'3'" :coverflowEffect="{rotate: 0,stretch: 40, depth: 150, modifier: 1, slideShadows: 0 }" :pagination="{ clickable: true, el: '.swiper-pagination' }"  :modules="modules" @slideChange="onSlideChange" class="mySwiper swiper")
                 swiper-slide(v-for="item in imgSlide" :key="item.id")
                     img.slide-img(:src="item.url")
                 .swiper-pagination
