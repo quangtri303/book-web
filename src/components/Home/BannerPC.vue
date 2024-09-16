@@ -7,9 +7,9 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
-const modules = [Pagination];
+const modules = [Pagination, Autoplay];
 
 const activeSlide = ref(0);
 const onSlideChange = (swiper) => {
@@ -124,7 +124,7 @@ const imgSlide = [
                         p {{ item.name }}
                         p {{ item.amount }}
         .box
-            swiper(:modules="modules" class="mySwiper swiper" )
+            swiper(:modules="modules" class="mySwiper swiper" :autoplay="{delay: 5000, disableOnInteraction: false,}" )
                 swiper-slide(v-for="item in imgSlide" :key="item.id")
                     img(:src="item.url" alt="item.id" :id="item.id" )
             .nav-button
